@@ -2,7 +2,15 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import './index.scss';
+import 'rxjs/add/observable/of';
+import 'rxjs/add/observable/timer';
+import 'rxjs/add/observable/fromEvent';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/debounce';
+import 'rxjs/add/operator/distinctUntilChanged';
+import './styles/index.scss';
 
 declare const window: any;
 

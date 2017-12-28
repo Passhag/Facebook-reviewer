@@ -16,3 +16,14 @@ body {
   align-items: center;
   height: 100vh;
 }
+
+// Components: QuerySelector
+.qs-list {}
+
+.qs-list.show {
+  display: block;
+}
+
+.qs-list.hide {
+  display: none;
+}

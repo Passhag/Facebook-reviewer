@@ -68,7 +68,6 @@
 
         "trailing-comma": [false],
 
-        "triple-equals": [ true, "allow-null-check" ],
         "typedef": [
             true,
             "parameter",
