@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "autoprefixer": "7.1.2",
+    "bluebird": "^3.5.1",
     "bootstrap": "^4.0.0-beta.2",
     "case-sensitive-paths-webpack-plugin": "2.1.1",
     "chalk": "1.1.3",
@@ -49,6 +50,7 @@
     "test": "node scripts/test.js --env=jsdom"
   },
   "devDependencies": {
+    "@types/bluebird": "^3.5.19",
     "@types/facebook-js-sdk": "^2.8.3",
     "@types/jest": "^21.1.9",
     "@types/node": "^8.5.2",

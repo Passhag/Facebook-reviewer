@@ -51,4 +51,16 @@ export class FbProvider implements Auth {
         });
     });
   }
+
+  apiCall(path: string): Promise<any> {
+    return new Promise((resolve, reject) => {
+      FB.api(`${path}`, (response) => {
+        if (response && !response.error) {
+          resolve(response);
+        } else {
+          reject(response.error);
+        }
+      });
+    });
+  }
 }
