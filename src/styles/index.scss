@@ -18,18 +18,3 @@ body {
 }
 
 // Components: QuerySelector
-.qs-list {}
-
-.qs-list.show {
-  display: block;
-}
-
-.qs-list.hide {
-  display: none;
-}
-
-.qs-list {
-  max-height: 250px;
-  overflow-y: scroll;
-  will-change: transition;
-}

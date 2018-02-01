@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Auth } from '../../service/auth';
-import { QuerySelector } from '../../components/common/QuerySelector';
+import { QuerySelector, QSItem } from '../../components/common/QuerySelector';
 import { Types, inject } from '../../utils/inversify/inversify.config';
 
 export interface QlItem {
@@ -9,7 +9,7 @@ export interface QlItem {
 }
 
 interface State {
-  items: QlItem[] | null;
+  items: QSItem[] | null;
 }
 
 interface Props {
@@ -40,28 +40,36 @@ class QuerySelectorContainer extends React.Component<Props, State> {
     }
   }
 
-  loadItems(input: string): void {
+  loadItems(input: string) {
     if (input.length !== 0) {
       const { type, queryParams, mapper } = this.props;
 
-      this._auth.apiCall(`/search?q=${input}&type=${type}${queryParams ? queryParams : ''}`)
+      return this._auth.apiCall(`/search?q=${input}&type=${type}${queryParams ? queryParams : ''}`)
         .then((response) => {
           const items = response.data.map(mapper);
-    
-          this.setState({
+
+          this.setState(() => ({
             items,
-          });
+          }));
         });
     } else {
       this.setState({
         items: null,
       });
+
+      return Promise.resolve();
     }
   }
 
   render() {
     const { items } = this.state;
 
+    // const items = [
+    //   { id: 1, content: 'Test1' }, 
+    //   { id: 2, content: 'Test2' }, 
+    //   { id: 3, content: 'Test3' }, 
+    //   { id: 4, content: 'Test4' }
+    // ];
     return (
       <QuerySelector
         items={items}

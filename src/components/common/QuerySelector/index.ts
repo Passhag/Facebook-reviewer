@@ -1,1 +1,1 @@
-export { QuerySelector } from './QuerySelector';
+export * from './QuerySelector';

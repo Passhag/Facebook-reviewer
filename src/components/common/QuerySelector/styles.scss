@@ -1,0 +1,15 @@
+.qs-list {}
+
+.qs-list-container.show {
+  display: block;
+}
+
+.qs-list-container.hide {
+  display: none;
+}
+
+.qs-list-container {
+  max-height: 250px;
+  overflow-y: scroll;
+  will-change: transition;
+}
